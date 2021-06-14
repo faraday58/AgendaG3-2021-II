@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaG3-2021-II", "AgendaG3-2021-II.csproj", "{7D130060-A56E-47C3-89F6-D71B1F03FCB3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colecciones", "..\Colecciones\Colecciones.csproj", "{EBD189F5-2650-47B3-A39F-F6DCBAF8105A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7D130060-A56E-47C3-89F6-D71B1F03FCB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D130060-A56E-47C3-89F6-D71B1F03FCB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D130060-A56E-47C3-89F6-D71B1F03FCB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBD189F5-2650-47B3-A39F-F6DCBAF8105A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBD189F5-2650-47B3-A39F-F6DCBAF8105A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBD189F5-2650-47B3-A39F-F6DCBAF8105A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBD189F5-2650-47B3-A39F-F6DCBAF8105A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
