@@ -29,6 +29,7 @@ namespace AgendaG3_2021_II
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtbNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +43,9 @@ namespace AgendaG3_2021_II
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbResultado = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -60,6 +63,7 @@ namespace AgendaG3_2021_II
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(324, 29);
             this.txtbNombre.TabIndex = 1;
+            this.txtbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbNombre_KeyPress);
             // 
             // label2
             // 
@@ -75,7 +79,8 @@ namespace AgendaG3_2021_II
             this.txtbTelefono.Location = new System.Drawing.Point(286, 221);
             this.txtbTelefono.Name = "txtbTelefono";
             this.txtbTelefono.Size = new System.Drawing.Size(324, 29);
-            this.txtbTelefono.TabIndex = 1;
+            this.txtbTelefono.TabIndex = 2;
+            this.txtbTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbNombre_KeyPress);
             // 
             // label3
             // 
@@ -91,14 +96,15 @@ namespace AgendaG3_2021_II
             this.txtbEdad.Location = new System.Drawing.Point(286, 293);
             this.txtbEdad.Name = "txtbEdad";
             this.txtbEdad.Size = new System.Drawing.Size(324, 29);
-            this.txtbEdad.TabIndex = 1;
+            this.txtbEdad.TabIndex = 3;
+            this.txtbEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbNombre_KeyPress);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(286, 413);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(166, 62);
-            this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -108,7 +114,7 @@ namespace AgendaG3_2021_II
             this.btnSiguiente.Location = new System.Drawing.Point(477, 413);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(166, 62);
-            this.btnSiguiente.TabIndex = 2;
+            this.btnSiguiente.TabIndex = 5;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
@@ -143,7 +149,7 @@ namespace AgendaG3_2021_II
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(205, 40);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
@@ -155,6 +161,10 @@ namespace AgendaG3_2021_II
             this.lbResultado.Size = new System.Drawing.Size(64, 25);
             this.lbResultado.TabIndex = 4;
             this.lbResultado.Text = "label4";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Form1
             // 
@@ -175,6 +185,7 @@ namespace AgendaG3_2021_II
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,6 +206,7 @@ namespace AgendaG3_2021_II
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.Label lbResultado;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

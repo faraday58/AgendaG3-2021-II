@@ -36,11 +36,7 @@ namespace AgendaG3_2021_II
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             //personas[Indice++] = new Persona(txtbNombre.Text, txtbTelefono.Text,byte.Parse( txtbEdad.Text));
-            personas.Add( new Persona(txtbNombre.Text, txtbTelefono.Text, byte.Parse(txtbEdad.Text)) );
-
-            txtbNombre.Clear();
-            txtbTelefono.Clear();
-            txtbEdad.Clear();
+            Guardar(sender);
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
@@ -77,5 +73,63 @@ namespace AgendaG3_2021_II
                 
             }
         }
+
+        private void txtbNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if( e.KeyChar == (char)Keys.Enter )
+            {
+                Guardar(sender);
+            }
+            
+        }
+
+
+        private void Guardar(object sender)
+        {
+            //Casteando a un objeto
+            TextBox textBox = (TextBox)sender;
+
+
+            try
+            {
+                if (txtbNombre.Text == "" || txtbTelefono.Text == "" || txtbEdad.Text == "")
+                {
+                    string error = "Usted debe ingresar un valor en cada campo";
+                    throw new ApplicationException(error);
+                }
+
+                if( textBox.Name == "txtbNombre" && txtbNombre.Text.Length > 80 )
+                {
+                    errorProvider1.SetError(txtbNombre, "El nombre no debe superar los 80 caracteres");
+                    throw new ApplicationException();
+                 
+
+                }
+                if (textBox.Name == "txtbTelefono" && txtbTelefono.Text.Length != 10 )
+                {
+                    errorProvider1.SetError(txtbTelefono, "El teléfono debe ser de 10 dígitos");
+                    throw new ApplicationException();
+                }
+
+
+
+
+                personas.Add(new Persona(txtbNombre.Text, txtbTelefono.Text, byte.Parse(txtbEdad.Text)));
+
+                txtbNombre.Clear();
+                txtbTelefono.Clear();
+                txtbEdad.Clear();
+            }
+            catch(ApplicationException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+           
+        }
+
+
     }
+
+
+
 }
